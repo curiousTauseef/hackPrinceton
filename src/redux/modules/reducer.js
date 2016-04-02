@@ -8,6 +8,8 @@ import counter from './counter';
 import {reducer as form} from 'redux-form';
 import info from './info';
 import widgets from './widgets';
+import questions from './questions';
+import responses from './response';
 
 export default combineReducers({
   routing: routeReducer,
@@ -20,5 +22,7 @@ export default combineReducers({
     counter3: counter
   }),
   info,
-  widgets
+  widgets,
+  questions,
+  responses
 });
