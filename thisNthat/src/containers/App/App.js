@@ -8,6 +8,7 @@ import NavItem from 'react-bootstrap/lib/NavItem';
 import Helmet from 'react-helmet';
 import { isLoaded as isInfoLoaded, load as loadInfo } from 'redux/modules/info';
 import { isLoaded as isAuthLoaded, load as loadAuth, logout } from 'redux/modules/auth';
+import { InfoBar } from 'components';
 import { routeActions } from 'react-router-redux';
 import config from '../../config';
 import { asyncConnect } from 'redux-async-connect';
@@ -80,9 +81,6 @@ export default class App extends Component {
                 <NavItem eventKey={1}>Chat</NavItem>
               </LinkContainer>}
 
-              <LinkContainer to="/newsfeed">
-                <NavItem eventKey={2}>Explore and Answer</NavItem>
-              </LinkContainer>
 
               {!user &&
               <LinkContainer to="/login">
@@ -97,6 +95,9 @@ export default class App extends Component {
             </Nav>
             {user &&
             <p className={styles.loggedInMessage + ' navbar-text'}>Logged in as <strong>{user.name}</strong>.</p>}
+            <Nav navbar pullRight>
+              <h3>HackPrinceton Project</h3>
+            </Nav>
           </Navbar.Collapse>
         </Navbar>
 
