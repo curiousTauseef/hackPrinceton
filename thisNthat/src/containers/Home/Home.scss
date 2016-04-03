@@ -60,16 +60,9 @@
 }
 
 .inputContainer {
-  input {
-    margin:0.5em;
-    padding: 0.5em;
- }
-}
-
-.inputUploadContainer {
-  width: 30%;
-  margin: auto;
-  input {
-    // float: left;
-  }
+   input{
+     margin: 0.4em;
+     padding: 0.2em;
+     color:black;
+   }
 }

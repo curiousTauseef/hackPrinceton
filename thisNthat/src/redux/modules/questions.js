@@ -1,36 +1,40 @@
-const GETQUESTIONS = 'redux-example/counter/GETQUESTIONS';
+const GET_QUESTIONS = 'redux-example/GET_QUESTIONS';
+const ADD_QUESTIONS = 'redux-example/ADD_QUESTIONS';
 
 const initialState = {
-[
-  {
-    id: 0,
-    userId:"",
-    itemA:"",
-    itemB:""
-  },
-  {
-    id: 1,
-    userId:"",
-    itemA:"",
-    itemB:""
-  }
-]
+  id: 1,
+  userId: 1,
+  item1: 'lemon',
+  item2: 'orange'
 };
 
-export default function reducer(state = initialState, action = {}) {
+export default function questions(state = initialState, action = {}) {
   switch (action.type) {
-    case GETQUESTIONS:
-      const {quesArray} = state;
+    case GET_QUESTIONS:
       return {
-        quesArray
+        ...state
+      };
+    case ADD_QUESTIONS:
+      //action.payload.id = state.questions.length() + 1;
+      console.log(action);
+      return {
+        ...state,
+        questions: [...state.questions, action.payload]
       };
     default:
       return state;
   }
 }
 
-export function increment() {
+export function getQuestions() {
   return {
-    type: GETQUESTIONS
+    type: GET_QUESTIONS
+  };
+}
+
+export function addQuestions() {
+  console.log('heree');
+  return {
+    type: ADD_QUESTIONS
   };
 }

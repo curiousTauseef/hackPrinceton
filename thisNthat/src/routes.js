@@ -5,7 +5,7 @@ import {
     App,
     Chat,
     Home,
-    Newsfeed,
+    Widgets,
     About,
     Login,
     LoginSuccess,
@@ -48,8 +48,8 @@ export default (store) => {
       { /* Routes */ }
       <Route path="about" component={About}/>
       <Route path="login" component={Login}/>
-      <Route path="survey" component={Survey}/>
-      <Route path="newsfeed" component={About}/>
+      <Route path="ask" component={Survey}/>
+      <Route path="widgets" component={Widgets}/>
 
       { /* Catch all route */ }
       <Route path="*" component={NotFound} status={404} />
