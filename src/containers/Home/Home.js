@@ -7,19 +7,26 @@ import { LinkContainer } from 'react-router-bootstrap';
 import {addQuestions} from 'redux/modules/questions';
 
 @connect(
-    state => ({questions: state}),
+    state => ({questions: state.questions, user:state.auth.user}),
     dispatch => bindActionCreators({addQuestions}, dispatch))
 
 export default class Home extends Component {
   static propTypes = {
-    questions: PropTypes.object,
+    questions: PropTypes.array,
+    user: PropTypes.user,
     addQuestions: PropTypes.func.isRequired
   }
   _compareNow = (event) => {
-    const {addQuestions} = this.props;
+    const {questions, addQuestions, user} = this.props;
+    console.log(user);
+    const obj={}
+    obj.item1 = this.refs.item1.value;
+    obj.item2 = this.refs.item2.value;
+    obj.userId = user;
+    addQuestions(obj);
     event.preventDefault();
-    console.log(this.refs.item1.value);
-    console.log(this.refs.item2.value);
+    // console.log(this.refs.item1.value);
+    // console.log(this.refs.item2.value);
   };
   render() {
     const {questions, addQuestions} = this.props;

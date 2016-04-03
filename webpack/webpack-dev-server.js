@@ -5,8 +5,8 @@ var config = require('../src/config');
 var webpackConfig = require('./dev.config');
 var compiler = webpack(webpackConfig);
 
-var host = config.host || 'localhost';
-var port = (Number(config.port) + 1) || 3001;
+var host = 'ec2-52-36-110-172.us-west-2.compute.amazonaws.com/';
+var port = '8080';
 var serverOptions = {
   contentBase: 'http://' + host + ':' + port,
   quiet: true,

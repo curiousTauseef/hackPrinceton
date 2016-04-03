@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 
 export default class Questions extends Component {
   static propTypes = {
-      /*questionObj: PropTypes.object.isRequired*/
+      questionObj: PropTypes.array.isRequired
     };
 
   render() {
